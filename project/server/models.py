@@ -29,8 +29,8 @@ class User(db.Model):
         """
         try:
             payload = {
-                'exp': datetime.datetime.utcnow() + datatime.timedleta(days=0,
-                                                                       seconds=5),
+                'exp': datetime.datetime.utcnow() + datetime.timedelta(days=0,
+                                        seconds=5),  # noqa: E501
                 'iat': datetime.datetime.utcnow(),
                 'sub': user_id
             }
